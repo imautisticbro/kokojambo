@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638256439049390678
+      ticks: 638256478233611223
     m_Hash: 3618001636
   m_LockFileStatus:
     m_FilePath: C:/Users/diana/Documents/GitHub/nomum/kokojambo/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638256439049440695
+      ticks: 638256478233621225
     m_Hash: 4025998744
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
