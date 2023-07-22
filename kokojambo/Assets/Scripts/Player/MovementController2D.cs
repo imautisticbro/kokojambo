@@ -37,45 +37,10 @@ void Start()
 // Update is called once per frame
 void Update()
 {
-    // Movement controls
-    if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (_isGrounded || Mathf.Abs(_rigidBody.velocity.x) > _speedAccuracy))///Movement system dlya daunov?
-    {
-        _moveVelocity = Input.GetKey(KeyCode.A) ? -1 : 1;
-    }
-    else
-    {
-        if (_isGrounded || _rigidBody.velocity.magnitude < _speedAccuracy) //Round if velocity too small ///spasibo blyat' luche by magicheskie chisla ubral eblan
-        {
-            _moveVelocity = 0;
-        }
-    }
-
-    // Change facing direction
-    if (_moveVelocity != 0)
-    {
-        if (_moveVelocity > 0 && !_facingRight)
-        {
-            _facingRight = true;
-             _transform.localScale = new Vector3(Mathf.Abs( _transform.localScale.x),  _transform.localScale.y, transform.localScale.z);
-        }
-        if (_moveVelocity < 0 && _facingRight)
-        {
-            _facingRight = false;
-             _transform.localScale = new Vector3(-Mathf.Abs( _transform.localScale.x),  _transform.localScale.y,  _transform.localScale.z);
-        }
-    }
-
-    // Jumping
-    if (Input.GetKeyDown(KeyCode.W) && _isGrounded)
-    {
-        _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, jumpHeight);
-    }
-
-    // Camera follow
-    if (mainCamera)
-    {
-        mainCamera.transform.position = new Vector3( _transform.position.x, _cameraPosition.y, _cameraPosition.z);
-    }
+    MovePlayer(Input.GetAxis("Horizontal")); ///Vot kak nado
+    RotatePlayer();
+    Jump();
+    CameraFollowing();
 }
 
 void FixedUpdate()
@@ -106,4 +71,37 @@ void FixedUpdate()
     Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(0, colliderRadius, 0), _isGrounded ? Color.green : Color.red);
     Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(colliderRadius, 0, 0), _isGrounded ? Color.green : Color.red);
 }
+    void RotatePlayer()
+    {
+        if (_moveVelocity > 0 && !_facingRight)
+        {
+            _facingRight = true;
+            _transform.localScale = new Vector3(Mathf.Abs(_transform.localScale.x), _transform.localScale.y, transform.localScale.z);
+        }
+        else if (_moveVelocity < 0 && _facingRight)
+        {
+            _facingRight = false;
+            _transform.localScale = new Vector3(-Mathf.Abs(_transform.localScale.x), _transform.localScale.y, _transform.localScale.z);
+        }
+    }
+    void MovePlayer(float horizontalVelocity)
+    {
+        if (_isGrounded) _moveVelocity = horizontalVelocity;
+    }
+    void Jump()
+    {
+        // Jumping
+        if (Input.GetKeyDown(KeyCode.W) && _isGrounded)
+        {
+            _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, jumpHeight);
+        }
+    }
+    void CameraFollowing()
+    {
+        // Camera follow
+        if (mainCamera)
+        {
+            mainCamera.transform.position = new Vector3(_transform.position.x, _cameraPosition.y, _cameraPosition.z);
+        }
+    }
 }
