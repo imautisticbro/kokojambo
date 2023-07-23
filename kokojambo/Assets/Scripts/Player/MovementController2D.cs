@@ -16,7 +16,7 @@ private Vector3 _cameraPosition;
 private Rigidbody2D _rigidBody;
 private CapsuleCollider2D _mainCollider;
 private Transform  _transform;
-
+private Animator _animator;
 // Use this for initialization
 void Start()
 {
@@ -27,7 +27,7 @@ void Start()
     _rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     _rigidBody.gravityScale = gravityScale;
     _facingRight =  _transform.localScale.x > 0;
-
+    _animator = GetComponent<Animator>();
     if (mainCamera)
     {
         _cameraPosition = mainCamera.transform.position;
@@ -86,15 +86,21 @@ void FixedUpdate()
     }
     void MovePlayer(float horizontalVelocity)
     {
-        if (_isGrounded) _moveVelocity = horizontalVelocity;
+        _moveVelocity = horizontalVelocity;
+        if (horizontalVelocity != 0) _animator.Play("run");
     }
     void Jump()
     {
         // Jumping
-        if (Input.GetKeyDown(KeyCode.W) && _isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
         {
             _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, jumpHeight);
+            _animator.Play("jump");
         }
+    }
+    void Die()
+    {
+        _animator.Play("death");
     }
     void CameraFollowing()
     {
