@@ -6,19 +6,40 @@ public class RopeSegment : MonoBehaviour
 {
     public GameObject connectedAbove, connectedBelow;
     //misha is my solnyshko
+
     void Start()
     {
         connectedAbove = GetComponent<HingeJoint2D>().connectedBody.gameObject;
         RopeSegment aboveSegment = connectedAbove.GetComponent<RopeSegment>();
-        if( aboveSegment != null)
+        if (aboveSegment != null)
         {
             aboveSegment.connectedBelow = gameObject;
             float spriteBottom = connectedAbove.GetComponent<SpriteRenderer>().bounds.size.y;
-            GetComponent<HingeJoint2D>().connectedAnchor=new Vector2(0, spriteBottom*-1);
+            GetComponent<HingeJoint2D>().connectedAnchor = new Vector2(0, spriteBottom * -1);
         }
         else
         {
-            GetComponent<HingeJoint2D>().connectedAnchor=new Vector2 (0, 0);
+            GetComponent<HingeJoint2D>().connectedAnchor = new Vector2(0, 0);
         }
     }
+    public void Reconfigure()
+    {
+        connectedAbove = GetComponent<HingeJoint2D>().connectedBody.gameObject;
+        RopeSegment aboveSegment = connectedAbove.GetComponent<RopeSegment>();
+        if (aboveSegment != null)
+        {
+            aboveSegment.connectedBelow = gameObject;
+            float spriteBottom = connectedAbove.GetComponent<SpriteRenderer>().bounds.size.y;
+            GetComponent<HingeJoint2D>().connectedAnchor = new Vector2(0, spriteBottom * -1);
+        }
+        else
+        {
+            GetComponent<HingeJoint2D>().connectedAnchor = new Vector2(0, 0);
+        }
+    }
+    private void Update()
+    {
+
+    }
+
 }

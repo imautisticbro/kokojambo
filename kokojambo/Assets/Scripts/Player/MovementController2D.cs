@@ -94,7 +94,7 @@ void FixedUpdate()
         // Jumping
         if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
         {
-            _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, jumpHeight);
+            _rigidBody.velocity += new Vector2(0, jumpHeight);
             _animator.Play("jump");
         }
     }
