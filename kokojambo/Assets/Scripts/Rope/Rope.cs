@@ -12,7 +12,10 @@ public class Rope : MonoBehaviour
     public GameObject[] prefabRopeSegments;
     public GameObject player;
     public int Linksnumber = 5;
+    public float ropeForceThreshold;
+    public ThresholdCalculationMode thresholdCalculationMode;
     private LinkedList<GameObject> _ropeSegments = new();
+
     //misha kotenochek
     void Start()
     {
@@ -21,8 +24,7 @@ public class Rope : MonoBehaviour
     private void FixedUpdate()
     {
         ExtendRope();
-        Debug.Log(_ropeSegments.Last().GetComponent<HingeJoint2D>().reactionForce.magnitude);
-        Debug.Log(_ropeSegments.Last().transform.position);
+        Debug.Log(_ropeSegments.First().GetComponent<HingeJoint2D>().reactionForce.magnitude);
     }
     void GenerateRope()
     {
@@ -35,8 +37,9 @@ public class Rope : MonoBehaviour
             newSegment.transform.position = transform.position;
             HingeJoint2D hj = newSegment.GetComponent<HingeJoint2D>();
             hj.connectedBody = previousRigidBody;
-            _ropeSegments.AddLast(newSegment);
+
             previousRigidBody=newSegment.GetComponent<Rigidbody2D>();
+            _ropeSegments.AddLast(newSegment);
         }
         player.GetComponent<HingeJoint2D>().connectedBody = _ropeSegments.Last().GetComponent<Rigidbody2D>();
         player.transform.position = _ropeSegments.Last().transform.position;
@@ -67,10 +70,33 @@ public class Rope : MonoBehaviour
     }
     public void ExtendRope()
     {
-        if (_ropeSegments.Last().GetComponent<HingeJoint2D>().reactionForce.magnitude >= 800)
+        switch (thresholdCalculationMode)
+        {
+
+
+            case ThresholdCalculationMode.First:
+        if (_ropeSegments.First().GetComponent<HingeJoint2D>().reactionForce.magnitude >= ropeForceThreshold)
         {
             AddSegmentFirst();
             player.GetComponent<HingeJoint2D>().connectedBody = _ropeSegments.Last().GetComponent<Rigidbody2D>();
         }
+                break;
+            case ThresholdCalculationMode.Last:
+                if (_ropeSegments.Last().GetComponent<HingeJoint2D>().reactionForce.magnitude >= ropeForceThreshold)
+                {
+                    AddSegmentFirst();
+                    player.GetComponent<HingeJoint2D>().connectedBody = _ropeSegments.Last().GetComponent<Rigidbody2D>();
+                }
+                break;
+            default:
+                if (_ropeSegments.First().GetComponent<HingeJoint2D>().reactionForce.magnitude >= ropeForceThreshold)
+                {
+                    AddSegmentFirst();
+                    player.GetComponent<HingeJoint2D>().connectedBody = _ropeSegments.Last().GetComponent<Rigidbody2D>();
+                }
+                break;
     }
+    }
+ 
 }
+   public enum ThresholdCalculationMode {First, Last, Middle, Combined }

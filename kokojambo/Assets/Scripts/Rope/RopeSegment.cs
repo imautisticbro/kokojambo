@@ -39,7 +39,7 @@ public class RopeSegment : MonoBehaviour
     }
     private void Update()
     {
-
+        //Debug.Log(GetComponent<HingeJoint2D>().reactionForce);
     }
 
 }
