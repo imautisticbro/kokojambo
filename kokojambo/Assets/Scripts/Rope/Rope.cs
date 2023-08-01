@@ -31,7 +31,9 @@ public class Rope : MonoBehaviour
         Rigidbody2D previousRigidBody = hook;
         for(int i = 0; i < Linksnumber; i++)
         {
-            int index = Random.Range(0, prefabRopeSegments.Length);
+
+            int index=  _ropeSegments.Count%5 == 0 ? 1 : 0;
+
             GameObject newSegment = Instantiate(prefabRopeSegments[index]);
             newSegment.transform.parent = transform;
             newSegment.transform.position = transform.position;
@@ -47,22 +49,22 @@ public class Rope : MonoBehaviour
     public void AddSegmentLast()
     {
         Rigidbody2D previousRigidBody = _ropeSegments.Last<GameObject>().GetComponent<Rigidbody2D>();
-        int index = Random.Range(0, prefabRopeSegments.Length);
+        int index = _ropeSegments.Count % 5 == 0 ? 1 : 0;
         GameObject newSegment = Instantiate(prefabRopeSegments[index]);
         _ropeSegments.AddLast(newSegment);
         newSegment.transform.parent = transform;
-        newSegment.transform.position = transform.position;
+        newSegment.transform.position = previousRigidBody.transform.position;
         HingeJoint2D hingeJoint2D = newSegment.GetComponent<HingeJoint2D>();
         hingeJoint2D.connectedBody = previousRigidBody;
     }
     public void AddSegmentFirst()
     {
         Rigidbody2D previousRigidBody = _ropeSegments.First<GameObject>().GetComponent<Rigidbody2D>();
-        int index = Random.Range(0, prefabRopeSegments.Length);
+        int index = _ropeSegments.Count % 5 == 0 ? 1 : 0;
         GameObject newSegment = Instantiate(prefabRopeSegments[index]);
         _ropeSegments.AddFirst(newSegment);
         newSegment.transform.parent = transform;
-        newSegment.transform.position = transform.position;
+        newSegment.transform.position = previousRigidBody.transform.position;
         HingeJoint2D hingeJoint2D = newSegment.GetComponent<HingeJoint2D>();
         hingeJoint2D.connectedBody = hook;
         previousRigidBody.gameObject.GetComponent<HingeJoint2D>().connectedBody = newSegment.GetComponent<Rigidbody2D>();
@@ -84,6 +86,24 @@ public class Rope : MonoBehaviour
             case ThresholdCalculationMode.Last:
                 if (_ropeSegments.Last().GetComponent<HingeJoint2D>().reactionForce.magnitude >= ropeForceThreshold)
                 {
+                    AddSegmentLast();
+                    player.GetComponent<HingeJoint2D>().connectedBody = _ropeSegments.Last().GetComponent<Rigidbody2D>();
+                }
+                break;
+            case ThresholdCalculationMode.Combined:
+                if(_ropeSegments.Last().GetComponent<HingeJoint2D>().reactionForce.magnitude >= ropeForceThreshold)
+                {
+                    AddSegmentLast();
+                    player.GetComponent<HingeJoint2D>().connectedBody = _ropeSegments.Last().GetComponent<Rigidbody2D>();
+                }
+                else if(_ropeSegments.First().GetComponent<HingeJoint2D>().reactionForce.magnitude >= ropeForceThreshold)
+                {
+                    AddSegmentFirst();
+                    player.GetComponent<HingeJoint2D>().connectedBody = _ropeSegments.Last().GetComponent<Rigidbody2D>();
+                }
+                else if (_ropeSegments.ToArray()[(int)_ropeSegments.Count/2].GetComponent<HingeJoint2D>().reactionForce.magnitude >= ropeForceThreshold)
+                {
+                    AddSegmentLast();
                     AddSegmentFirst();
                     player.GetComponent<HingeJoint2D>().connectedBody = _ropeSegments.Last().GetComponent<Rigidbody2D>();
                 }
