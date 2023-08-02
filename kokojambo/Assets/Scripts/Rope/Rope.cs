@@ -8,17 +8,19 @@ using UnityEngine.Scripting;
 
 public class Rope : MonoBehaviour
 {
-    public Rigidbody2D hook;
-    public GameObject[] prefabRopeSegments;
-    public GameObject player;
-    public int Linksnumber = 5;
-    public float ropeForceThreshold;
-    public ThresholdCalculationMode thresholdCalculationMode;
-    private LinkedList<GameObject> _ropeSegments = new();
+    [SerializeField]private Rigidbody2D hook;
+    [SerializeField]private GameObject[] prefabRopeSegments;
+    [SerializeField]private GameObject player;
+    [SerializeField]private int Linksnumber = 5;
+    [SerializeField]private float ropeForceThreshold;
+    [SerializeField]private ThresholdCalculationMode thresholdCalculationMode;
+    [SerializeField]private LinkedList<GameObject> _ropeSegments = new();
 
     //misha kotenochek
     void Start()
     {
+        player = GameObject.Find("Player");
+        
         GenerateRope();
     }
     private void FixedUpdate()
@@ -44,7 +46,8 @@ public class Rope : MonoBehaviour
             _ropeSegments.AddLast(newSegment);
         }
         player.GetComponent<HingeJoint2D>().connectedBody = _ropeSegments.Last().GetComponent<Rigidbody2D>();
-        player.transform.position = _ropeSegments.Last().transform.position;
+        player.GetComponent<HingeJoint2D>().enabled = true;
+        //player.transform.position = _ropeSegments.Last().transform.position;
     }
     public void AddSegmentLast()
     {
@@ -84,7 +87,7 @@ public class Rope : MonoBehaviour
         }
                 break;
             case ThresholdCalculationMode.Last:
-                if (_ropeSegments.Last().GetComponent<HingeJoint2D>().reactionForce.magnitude >= ropeForceThreshold)
+                if (_ropeSegments.Last().GetComponent<HingeJoint2D>()?.reactionForce.magnitude >= ropeForceThreshold)
                 {
                     AddSegmentLast();
                     player.GetComponent<HingeJoint2D>().connectedBody = _ropeSegments.Last().GetComponent<Rigidbody2D>();

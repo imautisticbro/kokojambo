@@ -12,6 +12,11 @@ public class AIFollowPlayer : MonoBehaviour
 
     private bool isGrounded;
 
+    private void Start()
+    {
+        player = GameObject.Find("Player").transform;
+    }
+
     private void Update()
     {
         Vector2 direction = player.position - transform.position;
