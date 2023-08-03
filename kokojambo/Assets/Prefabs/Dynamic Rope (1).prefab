@@ -182,5 +182,5 @@ MonoBehaviour:
   - {fileID: 2571578756230023612, guid: 5282742446a1beb48893735479eddfd2, type: 3}
   player: {fileID: 0}
   Linksnumber: 20
-  ropeForceThreshold: 500
+  ropeForceThreshold: 10000
   thresholdCalculationMode: 1
