@@ -17,7 +17,7 @@ public class HookThrower : MonoBehaviour
         {
             ThrowHook();
         }
-        else if (Input.GetKeyDown(KeyCode.R) && hasHookAttached)
+        else if (Input.GetKeyDown(_throwKey) && hasHookAttached)
         {
             Destroy(_thrownHook);
             hasHookAttached = false;
