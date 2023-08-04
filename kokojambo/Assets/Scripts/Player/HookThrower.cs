@@ -6,6 +6,7 @@ public class HookThrower : MonoBehaviour
     [SerializeField] private GameObject hookPrefab;
     [SerializeField] private Transform player;
     [SerializeField] private float throwForce = 100f;
+    [SerializeField] private float maxDistance = 10f;
 
     [SerializeField] private KeyCode _throwKey = KeyCode.R;
     private bool hasHookAttached = false;
@@ -13,16 +14,21 @@ public class HookThrower : MonoBehaviour
 
     void Update()
     {
+        hasHookAttached = _thrownHook == null ? false : hasHookAttached;
         if (Input.GetKeyDown(_throwKey) && !hasHookAttached)
         {
             ThrowHook();
         }
-        else if (Input.GetKeyDown(_throwKey) && hasHookAttached)
+        else if (Input.GetKeyDown(_throwKey) && hasHookAttached )
         {
             Destroy(_thrownHook);
             hasHookAttached = false;
         }
-
+        if(_thrownHook!=null && Vector3.Distance(player.transform.position, _thrownHook.transform.position) >= maxDistance)
+        {
+            Destroy(_thrownHook);
+            hasHookAttached = false;
+        }
     }
 
     void ThrowHook()

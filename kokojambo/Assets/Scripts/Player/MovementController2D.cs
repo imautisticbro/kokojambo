@@ -107,7 +107,7 @@ void FixedUpdate()
         // Camera follow
         if (mainCamera)
         {
-            mainCamera.transform.position = new Vector3(_transform.position.x, _cameraPosition.y, _cameraPosition.z);
+            mainCamera.transform.position = new Vector3(_transform.position.x, _transform.position.y, _cameraPosition.z);
         }
     }
 }
