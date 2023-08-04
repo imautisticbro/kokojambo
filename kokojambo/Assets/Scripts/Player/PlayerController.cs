@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour, IDamageReciever
     {
         _animator = gameObject.GetComponent<Animator>();
     }
+    void Update()
+    {
+        if (gameObject.transform.position.y <= -10) Die();
+    }
     public void TakeDamage(float amount)
     {
         hp -= amount;
