@@ -1,5 +1,8 @@
-
-kokojambo/Library/ArtifactDB
+kokojambo/Library/
+/Library/
+/[Oo]bj/
+/Temp/
+kokojambo/Library/ArtifactDBv
 kokojambo/Library/ArtifactDB
 kokojambo/Library/ArtifactDB
 kokojambo/Library/ArtifactDB
