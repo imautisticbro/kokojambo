@@ -18,7 +18,11 @@ public class InteractableNPC : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Instantiate(_prefab, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerController>().savedDivers.Add(Instantiate(_prefab, transform.position, Quaternion.identity).transform);
+            
+            Destroy(gameObject);
+        }
     }
 }

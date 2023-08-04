@@ -20,5 +20,10 @@ public class HookTip : MonoBehaviour
             _ropeInstance = Instantiate(_rope, transform);
             //_ropeInstance.transform.position = Vector3.zero;
         }
+        else if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            collision.gameObject.GetComponent<EntityController>().TakeDamage(1);
+            Destroy(gameObject);
+        }
     }
 }
