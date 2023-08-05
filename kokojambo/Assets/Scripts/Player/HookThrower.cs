@@ -41,5 +41,6 @@ public class HookThrower : MonoBehaviour
         hookRigidbody.AddForce(throwDirection * throwForce, ForceMode2D.Impulse);
 
         hasHookAttached = true;
+        GetComponent<AudioController>().PlaySoundForced(1);
     }
 }

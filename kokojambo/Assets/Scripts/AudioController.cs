@@ -6,20 +6,21 @@ public class AudioController : MonoBehaviour
 {
     [SerializeField]private List<AudioClip> _audioClips;
     private AudioSource _audioSource;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void PlaySound(int index)
     {
+        if (_audioSource.isPlaying) return;
         _audioSource.clip = _audioClips.ToArray()[index];
+        _audioSource.Play();
+    }
+    public void PlaySoundForced(int index)
+    {
+        _audioSource.clip = _audioClips.ToArray()[index];
+        _audioSource.Play();
     }
 }
