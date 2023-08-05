@@ -9,5 +9,4 @@ public interface IDamageReciever
 
     public void TakeDamage(float amount);
 
-    public float hp { get; set; }
 }

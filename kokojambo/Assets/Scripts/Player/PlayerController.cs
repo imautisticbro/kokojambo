@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour, IDamageReciever
             Destroy(diver.gameObject);
             return;
         }
+        Destroy(GetComponent<MovementController2D>());
         _animator.Play("death");
         StartCoroutine(Destroy());
 

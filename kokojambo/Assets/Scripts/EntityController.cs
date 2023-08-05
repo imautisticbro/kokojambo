@@ -4,30 +4,37 @@ using UnityEngine;
 
 public class EntityController : MonoBehaviour , IDamageReciever
 {
-    public float hp { get; set; }
+    public float hp;
     private Animator _animator;
     [SerializeField]private GameObject _deadPrefab;
     [SerializeField]private LayerMask _damageDealers;
+    [SerializeField] private List<Material> materials = new();
+    [SerializeField] private float _materialSwapTime;
+    private SpriteRenderer _spriteRenderer;
     private void Start()
     {
         _animator = gameObject.GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
     public void TakeDamage(float amount)
     {
         hp -= amount;
+        StartCoroutine(MaterialSwap());
         if (hp <= 0) Die();
     }
     public void Die()
     {
-        _animator.Play("die");
-        Destroy();
-    }
-    IEnumerable Destroy()
-    {   
-
-        yield return new WaitForSeconds(3f);
+        _animator.Play("death");
         Destroy(gameObject);
-        Instantiate(_deadPrefab, transform.position, Quaternion.identity);
+    }
+
+    IEnumerator MaterialSwap()
+    {
+        _spriteRenderer.material = materials.ToArray()[1];
+        yield return new WaitForSeconds(_materialSwapTime);
+        _spriteRenderer.material = materials.ToArray()[2];
+        yield return new WaitForSeconds(_materialSwapTime);
+        _spriteRenderer.material = materials.ToArray()[0];
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
