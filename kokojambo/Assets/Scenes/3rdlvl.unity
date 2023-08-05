@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Coins: 0
-  CoinText: {fileID: 0}
+  CoinText: {fileID: 1478311095}
 --- !u!233 &81009646
 HingeJoint2D:
   m_ObjectHideFlags: 0
