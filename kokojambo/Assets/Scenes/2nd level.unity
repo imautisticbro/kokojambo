@@ -3272,6 +3272,18 @@ PrefabInstance:
       propertyPath: CoinText
       value: 
       objectReference: {fileID: 1282581483}
+    - target: {fileID: 5300179667798574181, guid: 6daf16e0d931c264790cd4954cadaf9a, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 1955599991}
+    - target: {fileID: 5300179667798574181, guid: 6daf16e0d931c264790cd4954cadaf9a, type: 3}
+      propertyPath: keyPickup
+      value: 
+      objectReference: {fileID: 1036152587}
+    - target: {fileID: 5300179667798574182, guid: 6daf16e0d931c264790cd4954cadaf9a, type: 3}
+      propertyPath: _damageDealers.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
     - target: {fileID: 5300179667798574203, guid: 6daf16e0d931c264790cd4954cadaf9a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -24507,6 +24519,7 @@ GameObject:
   - component: {fileID: 1955599994}
   - component: {fileID: 1955599993}
   - component: {fileID: 1955599992}
+  - component: {fileID: 1955599997}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -24648,6 +24661,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 1.873, z: 0}
+--- !u!114 &1955599997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955599991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d186b7378b8375743ae99caf95d5184d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: {fileID: 1036152587}
+  _sceneName: 3rdlvl
 --- !u!1 &2026252123
 GameObject:
   m_ObjectHideFlags: 0
