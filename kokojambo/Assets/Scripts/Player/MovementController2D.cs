@@ -96,6 +96,7 @@ void FixedUpdate()
         {
             _rigidBody.velocity += new Vector2(0, jumpHeight);
             _animator.Play("jump");
+            GetComponent<AudioController>().PlaySoundForced(0);
         }
     }
     void Die()
