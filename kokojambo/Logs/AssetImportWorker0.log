@@ -15,7 +15,11 @@ C:/Users/diana/Documents/GitHub/kokojambo/kokojambo
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< Updated upstream
 65183
+=======
+49221
+>>>>>>> Stashed changes
 Successfully changed project path to: C:/Users/diana/Documents/GitHub/kokojambo/kokojambo
 C:/Users/diana/Documents/GitHub/kokojambo/kokojambo
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +51,11 @@ C:/Users/diana/Documents/GitHub/kokojambo/kokojambo
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
+<<<<<<< Updated upstream
 Refreshing native plugins compatible for Editor in 88.41 ms, found 6 plugins.
+=======
+Refreshing native plugins compatible for Editor in 92.64 ms, found 6 plugins.
+>>>>>>> Stashed changes
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
 [Subsystems] Discovering subsystems at path E:/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -74,7 +82,11 @@ Register platform support module: E:/2021.3.11f1/Editor/Data/PlaybackEngines/App
 Register platform support module: E:/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: E:/2021.3.11f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
 Register platform support module: E:/2021.3.11f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+<<<<<<< Updated upstream
 Registered in 0.003214 seconds.
+=======
+Registered in 0.003446 seconds.
+>>>>>>> Stashed changes
 Native extension for UWP target not found
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
@@ -87,6 +99,7 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
+<<<<<<< Updated upstream
 Refreshing native plugins compatible for Editor in 86.30 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
@@ -94,11 +107,21 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (517ms)
 		BeginReloadAssembly (49ms)
+=======
+Refreshing native plugins compatible for Editor in 86.14 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.537 seconds
+Domain Reload Profiling:
+	ReloadAssembly (538ms)
+		BeginReloadAssembly (54ms)
+>>>>>>> Stashed changes
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
+<<<<<<< Updated upstream
 		EndReloadAssembly (391ms)
 			LoadAssemblies (50ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
@@ -113,13 +136,33 @@ Domain Reload Profiling:
 				BeforeProcessingInitializeOnLoad (1ms)
 				ProcessInitializeOnLoadAttributes (76ms)
 				ProcessInitializeOnLoadMethodAttributes (35ms)
+=======
+		EndReloadAssembly (404ms)
+			LoadAssemblies (55ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (83ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (21ms)
+			SetupLoadedEditorAssemblies (259ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (56ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (77ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+>>>>>>> Stashed changes
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
+<<<<<<< Updated upstream
 Registered in 0.006718 seconds.
+=======
+Registered in 0.009521 seconds.
+>>>>>>> Stashed changes
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\diana\Documents\GitHub\kokojambo\kokojambo\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\diana\Documents\GitHub\kokojambo\kokojambo\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
@@ -131,6 +174,7 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
+<<<<<<< Updated upstream
 Refreshing native plugins compatible for Editor in 87.07 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
@@ -336,10 +380,20 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (1020ms)
 		BeginReloadAssembly (112ms)
+=======
+Refreshing native plugins compatible for Editor in 87.72 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.115 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1116ms)
+		BeginReloadAssembly (193ms)
+>>>>>>> Stashed changes
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< Updated upstream
 			CreateAndSetChildDomain (35ms)
 		EndReloadAssembly (830ms)
 			LoadAssemblies (75ms)
@@ -366,6 +420,37 @@ Unloading 4351 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 35 unused Assets / (24.7 KB). Loaded Objects now: 4840.
 Memory consumption went from 163.3 MB to 163.2 MB.
 Total: 4.040600 ms (FindLiveObjects: 0.387900 ms CreateObjectMapping: 0.364400 ms MarkObjects: 3.254300 ms  DeleteObjects: 0.031500 ms)
+=======
+			CreateAndSetChildDomain (121ms)
+		EndReloadAssembly (830ms)
+			LoadAssemblies (77ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (220ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (442ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (21ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (88ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (205ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.99 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4380 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 48 unused Assets / (56.3 KB). Loaded Objects now: 4831.
+Memory consumption went from 165.8 MB to 165.7 MB.
+Total: 3.482300 ms (FindLiveObjects: 0.324000 ms CreateObjectMapping: 0.266100 ms MarkObjects: 2.801700 ms  DeleteObjects: 0.089300 ms)
+>>>>>>> Stashed changes
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -378,6 +463,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+<<<<<<< Updated upstream
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.007158 seconds.
@@ -890,6 +976,49 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+=======
+Received Import Request.
+  Time since last request: 1270871.316021 seconds.
+  path: Assets/Enemies/Eel/Death.png
+  artifactKey: Guid(bc586a17ebaed1c4b932a48c0edc255c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemies/Eel/Death.png using Guid(bc586a17ebaed1c4b932a48c0edc255c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf902d8ac784a01bcff74bc6fd9b8a8e') in 0.097800 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Enemies/Eel/Idle.png
+  artifactKey: Guid(ad438330b06d31f48990bcdf9de67a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemies/Eel/Idle.png using Guid(ad438330b06d31f48990bcdf9de67a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f5e1b9cf7d293e8d9666a4441fbdd01') in 0.013242 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.229563 seconds.
+  path: Assets/Enemies/Jellyfish/Death.png
+  artifactKey: Guid(b3e18d3b4a96a774b81160354ccd5646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemies/Jellyfish/Death.png using Guid(b3e18d3b4a96a774b81160354ccd5646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd88b159244fadd0c504e2352272d8897') in 0.014078 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Enemies/Jellyfish/Idle.png
+  artifactKey: Guid(057fd4f6e3ed3ce4abc6ff15b3121033) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemies/Jellyfish/Idle.png using Guid(057fd4f6e3ed3ce4abc6ff15b3121033) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6955a7d5f22a5cd99f286b6b5705186') in 0.013271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.210712 seconds.
+  path: Assets/Enemies/JustFish/Death.png
+  artifactKey: Guid(a19efaa0a33fdfe4c889ed28fb376768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemies/JustFish/Death.png using Guid(a19efaa0a33fdfe4c889ed28fb376768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '316d4aa79e5dd93318a8263196fe2802') in 0.018726 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Enemies/JustFish/Idle.png
+  artifactKey: Guid(59bf29dad52aab8439a12532feb96084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemies/JustFish/Idle.png using Guid(59bf29dad52aab8439a12532feb96084) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd206e6b7dd0abfefc11a184f8500bceb') in 0.013932 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.624473 seconds.
+  path: Assets/Enemies/Octopus/Death.png
+  artifactKey: Guid(31476857d97e73341be4d7cda3f65125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Enemies/Octopus/Death.png using Guid(31476857d97e73341be4d7cda3f65125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14a20a63fde12ae8849aa89159e92996') in 0.019361 seconds 
+>>>>>>> Stashed changes
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
